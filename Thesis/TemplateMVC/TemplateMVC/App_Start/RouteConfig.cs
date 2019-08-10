@@ -18,6 +18,18 @@ namespace TemplateMVC
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+               name: "Dammio",
+               url: "{controller}/{action}/{ten}/{tuoi}"
+           );
+
+            routes.MapRoute(
+               name: "Create",
+               url: "{controller}/{action}/"
+            );
+
+
         }
     }
 }

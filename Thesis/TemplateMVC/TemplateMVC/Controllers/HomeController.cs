@@ -74,29 +74,34 @@ namespace TemplateMVC.Controllers
             }   
             return View();
         }
-        public bool AddEmployee(EmpModel obj)
+
+        public string ChaoMung()
         {
+            return "Đây là phương thức ChaoMung nằm trong Controller Dammio!";
+        } 
 
-            connection();
-            SqlCommand com = new SqlCommand("AddNewEmpDetails", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@Name", obj.Name);
-            com.Parameters.AddWithValue("@City", obj.City);
-            com.Parameters.AddWithValue("@Address", obj.Address);
-            con.Open();
-            int i = com.ExecuteNonQuery();
-            con.Close();
-            if (i >= 1)
+        public String Create()
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+
+            conn.Open();
+            String sql = "INSERT INTO patient(qrCode,name,age,sex,address,phone) VALUES(?qrCode,?name,?age,?sex,?address,?phone)";
+            MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
+            try
             {
-
-                return true;
-
+                cmd.Parameters.Add("?qrCode", MySqlDbType.VarChar).Value = "myQrcode";
+                cmd.Parameters.Add("?name", MySqlDbType.VarChar).Value = "myName";
+                cmd.Parameters.Add("?age", MySqlDbType.Int16).Value = 99;
+                cmd.Parameters.Add("?sex", MySqlDbType.VarChar).Value = "male";
+                cmd.Parameters.Add("?address", MySqlDbType.VarChar).Value = "myaddress";
+                cmd.Parameters.Add("?phone", MySqlDbType.VarChar).Value = "12355";
+                cmd.ExecuteNonQuery();
             }
-            else
-            {
-
-                return false;
+            catch (Exception e) {
+                return e.ToString();
             }
+
+            return "okie";
         }
         
     
