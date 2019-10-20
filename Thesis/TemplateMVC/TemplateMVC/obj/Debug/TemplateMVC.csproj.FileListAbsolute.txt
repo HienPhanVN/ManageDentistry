@@ -37,3 +37,5 @@ C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csprojResolveAssemblyReference.cache
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.dll
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.pdb
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Newtonsoft.Json.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Newtonsoft.Json.xml

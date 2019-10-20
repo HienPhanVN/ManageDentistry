@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Data.Common;
-using MySql.Data.MySqlClient;
+using TemplateMVC.Models;
+using System.Data;
 
 namespace TemplateMVC.Controllers
 {
@@ -63,7 +64,7 @@ namespace TemplateMVC.Controllers
             }
             catch (Exception e)
             {
-
+                Console.WriteLine(e.ToString());
             }
             finally
             {
@@ -75,35 +76,66 @@ namespace TemplateMVC.Controllers
             return View();
         }
 
+        public ActionResult managepatient() 
+        {
+            return View();
+        }
+
         public string ChaoMung()
         {
             return "Đây là phương thức ChaoMung nằm trong Controller Dammio!";
-        } 
+        }
 
-        public String Create()
+
+        public string getAllPatient()
+        {
+            Patient patient = new Patient();
+            return patient.getAll();            
+        }
+
+
+        public bool Create(string qrCode, string name, int age, string sex, string address, string phone, string insuranceCode)
         {
             MySqlConnection conn = DBUtils.GetDBConnection();
-
             conn.Open();
-            String sql = "INSERT INTO patient(qrCode,name,age,sex,address,phone) VALUES(?qrCode,?name,?age,?sex,?address,?phone)";
+            String sql = "INSERT INTO patient(qrCode,name,age,sex,address,phone,insuranceCode) VALUES(?qrCode,?name,?age,?sex,?address,?phone,?insuranceCode)";
             MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
             try
             {
-                cmd.Parameters.Add("?qrCode", MySqlDbType.VarChar).Value = "myQrcode";
-                cmd.Parameters.Add("?name", MySqlDbType.VarChar).Value = "myName";
-                cmd.Parameters.Add("?age", MySqlDbType.Int16).Value = 99;
-                cmd.Parameters.Add("?sex", MySqlDbType.VarChar).Value = "male";
-                cmd.Parameters.Add("?address", MySqlDbType.VarChar).Value = "myaddress";
-                cmd.Parameters.Add("?phone", MySqlDbType.VarChar).Value = "12355";
+                cmd.Parameters.Add("?qrCode", MySqlDbType.VarChar).Value = qrCode;
+                cmd.Parameters.Add("?name", MySqlDbType.VarChar).Value = name;
+                cmd.Parameters.Add("?age", MySqlDbType.Int32).Value = age;
+                cmd.Parameters.Add("?sex", MySqlDbType.VarChar).Value = sex;
+                cmd.Parameters.Add("?address", MySqlDbType.VarChar).Value = address;
+                cmd.Parameters.Add("?phone", MySqlDbType.VarChar).Value = phone;
+                cmd.Parameters.Add("?insuranceCode", MySqlDbType.VarChar).Value = insuranceCode;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception e) {
-                return e.ToString();
+                Console.WriteLine(e.ToString());
+                return false;
             }
-
-            return "okie";
+            return true;
         }
-        
+
+        public bool Delete(int id)
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
+            String sql = "DELETE FROM patient WHERE idPatient=@id";
+            MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
+            try
+            {
+                cmd.Parameters.Add("?id", MySqlDbType.Int32).Value = id;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return false;
+            }
+            return true;
+        }
     
     }   //end class
 }       //end namespace
