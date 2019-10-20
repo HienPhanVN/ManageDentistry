@@ -1,5 +1,26 @@
 CREATE DATABASE IF NOT EXISTS `managerdentist`;
 
+CREATE TABLE IF NOT EXISTS `managerdentist`.`tier` (
+  `id_tier` INT NOT NULL AUTO_INCREMENT,
+  `name_tier` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_tier`));
+
+SET FOREIGN_KEY_CHECKS=0;
+TRUNCATE TABLE `managerdentist`.`tier`;
+INSERT INTO `managerdentist`.`tier`(name_tier)
+VALUES
+	('name_tier 1'),
+	('name_tier 2'),
+	('name_tier 3'),
+	('name_tier 4'),
+	('name_tier 5'),
+	('name_tier 6'),
+	('name_tier 7'),
+	('name_tier 8'),
+	('name_tier 9'),
+    ('name_tier 10');
+SET FOREIGN_KEY_CHECKS=1;
+
 CREATE TABLE IF NOT EXISTS `managerdentist`.`user` (
   `id_user` INT NOT NULL AUTO_INCREMENT,
   `name_user` VARCHAR(45) NOT NULL,
@@ -8,6 +29,14 @@ CREATE TABLE IF NOT EXISTS `managerdentist`.`user` (
   `email_user` VARCHAR(45) NULL,
   `id_tier` INT NOT NULL,
   PRIMARY KEY (`id_user`));
+
+ALTER TABLE `managerdentist`.`user` 
+ADD CONSTRAINT `fk_tier`
+  FOREIGN KEY (`id_tier`)
+  REFERENCES `managerdentist`.`tier` (`id_tier`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
 
 SET FOREIGN_KEY_CHECKS=0;
 TRUNCATE TABLE `managerdentist`.`user`;
@@ -257,7 +286,4 @@ VALUES
     (9),
     (10);
 SET FOREIGN_KEY_CHECKS=1;
-
-
-
 
