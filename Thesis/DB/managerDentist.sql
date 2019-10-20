@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `managerdentist`.`user` (
   PRIMARY KEY (`id_user`));
 
 ALTER TABLE `managerdentist`.`user` 
-ADD CONSTRAINT `fk_tier`
+ADD CONSTRAINT `fk_tier_user`
   FOREIGN KEY (`id_tier`)
   REFERENCES `managerdentist`.`tier` (`id_tier`)
   ON DELETE NO ACTION
