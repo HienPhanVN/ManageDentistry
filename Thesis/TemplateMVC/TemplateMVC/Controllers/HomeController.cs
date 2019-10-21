@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Data.Common;
-using TemplateMVC.Models;
 using System.Data;
+using TemplateMVC.Models;
 
 namespace TemplateMVC.Controllers
 {
@@ -80,17 +80,12 @@ namespace TemplateMVC.Controllers
         {
             return View();
         }
+        
 
-        public string ChaoMung()
+        public ActionResult getAllPatient()
         {
-            return "Đây là phương thức ChaoMung nằm trong Controller Dammio!";
-        }
-
-
-        public string getAllPatient()
-        {
-            Patient patient = new Patient();
-            return patient.getAll();            
+            user patient = new user();                        
+            return this.Json(patient.Read(), JsonRequestBehavior.AllowGet);
         }
 
 
@@ -139,3 +134,4 @@ namespace TemplateMVC.Controllers
     
     }   //end class
 }       //end namespace
+

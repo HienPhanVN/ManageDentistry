@@ -16,7 +16,7 @@ namespace TemplateMVC.Controllers
             
             string host = "127.0.0.1";
             int port = 3306;
-            string database = "managdentist";
+            string database = "managerdentist";
             string username = "admin";
             string password = "admin";
 

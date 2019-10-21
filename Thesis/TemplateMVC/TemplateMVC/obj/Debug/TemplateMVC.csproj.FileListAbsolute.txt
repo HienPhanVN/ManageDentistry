@@ -34,8 +34,14 @@ C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Razor.xml
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Helpers.xml
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Mvc.xml
-C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csprojResolveAssemblyReference.cache
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.dll
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.pdb
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Newtonsoft.Json.dll
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Newtonsoft.Json.xml
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\MySql.Data.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Google.Protobuf.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\BouncyCastle.Crypto.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\MySql.Data.xml
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csprojAssemblyReference.cache
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csproj.CopyComplete

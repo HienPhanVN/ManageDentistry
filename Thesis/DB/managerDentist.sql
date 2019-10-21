@@ -1,4 +1,6 @@
+DROP DATABASE IF EXISTS `managerdentist`;
 CREATE DATABASE IF NOT EXISTS `managerdentist`;
+USE `managerdentist`;
 
 CREATE TABLE IF NOT EXISTS `managerdentist`.`tier` (
   `id_tier` INT NOT NULL AUTO_INCREMENT,
@@ -51,7 +53,7 @@ VALUES
 	('name user 7', '0007', 'address user 7', 'user0007@mail.com.vn', 7),
 	('name user 8', '0008', 'address user 8', 'user0008@mail.com.vn', 8),
 	('name user 9', '0009', 'address user 9', 'user0009@mail.com.vn', 9),
-    ('name user 0', '0000', 'address user 0', 'user0000@mail.com.vn', 10);
+    ('name user 10', '0010', 'address user 10', 'user0010@mail.com.vn', 10);
 SET FOREIGN_KEY_CHECKS=1;    
     
 CREATE TABLE IF NOT EXISTS `managerdentist`.`account` (
@@ -106,7 +108,7 @@ VALUES
     ('name_company 7', 'address_company 7', "0007", 'email_company0007@mail.com.vn'),
 	('name_company 8', 'address_company 8', "0008", 'email_company0008@mail.com.vn'),
     ('name_company 9', 'address_company 9', "0009", 'email_company0009@mail.com.vn'),
-    ('name_company 10', 'address_company 10', "0010", 'email_company0000@mail.com.vn');
+    ('name_company 10', 'address_company 10', "0010", 'email_company0010@mail.com.vn');
 SET FOREIGN_KEY_CHECKS=1;
 
 
@@ -153,7 +155,7 @@ VALUES
     ('status_bill 7', 'note_bill 7', 01.07, 01.07),
 	('status_bill 8', 'note_bill 8', 01.08, 01.08),
     ('status_bill 9', 'note_bill 9', 01.09, 01.09),
-    ('status_bill 10', 'note_bill 10', 01.00, 01.00);
+    ('status_bill 10', 'note_bill 10', 01.10, 01.10);
 SET FOREIGN_KEY_CHECKS=1;
   
   CREATE TABLE IF NOT EXISTS `managerdentist`.`product` (
@@ -197,7 +199,7 @@ VALUES
     ('name_product 7', 01.07, 'note_product 7', 7, 7, 7),
 	('name_product 8', 01.08, 'note_product 8', 8, 8, 8),
     ('name_product 9', 01.09, 'note_product 9', 9, 9, 9),
-    ('name_product 10', 01.00, 'note_product 10', 10, 10, 10);
+    ('name_product 10', 01.10, 'note_product 10', 10, 10, 10);
 SET FOREIGN_KEY_CHECKS=1;
       
     
