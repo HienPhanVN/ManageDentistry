@@ -8,6 +8,7 @@ using TemplateMVC.Controllers;
 using System.Web.Mvc;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace TemplateMVC.Models
 {
@@ -39,7 +40,7 @@ namespace TemplateMVC.Models
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                Debug.WriteLine(e.ToString());
                 return false;
             }
             return true;
@@ -49,16 +50,17 @@ namespace TemplateMVC.Models
         {
             MySqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
-            String sql = "DELETE FROM managerdentist.user WHERE id_user=@id";
+            String sql = "DELETE FROM `managerdentist`.`user` WHERE (`id_user` = @id_user)";
             MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
+            Debug.WriteLine(id_user);
             try
             {
-                cmd.Parameters.Add("?id", MySqlDbType.Int32).Value = id_user;
+                cmd.Parameters.Add("?id_user", MySqlDbType.Int32).Value = id_user;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                System.Diagnostics.Debug.WriteLine(e.ToString());
                 return false;
             }
             return true;
@@ -94,18 +96,13 @@ namespace TemplateMVC.Models
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                Debug.WriteLine(e.ToString());
             }
             finally
             {                
                 conn.Close();             
                 conn.Dispose();
             }
-
-            //foreach (user item in list)
-            //{                
-            //    System.Diagnostics.Debug.WriteLine(item.name_user);
-            //}
             return list;
         }
 
@@ -129,11 +126,10 @@ namespace TemplateMVC.Models
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                Debug.WriteLine(e.ToString());
                 return false;
             }
             return true;
         }
-
     }
 }

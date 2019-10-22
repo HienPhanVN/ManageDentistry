@@ -82,10 +82,24 @@ namespace TemplateMVC.Controllers
         }
         
 
-        public ActionResult getAllPatient()
+        public ActionResult getAllUser()
         {
             user patient = new user();                        
             return this.Json(patient.Read(), JsonRequestBehavior.AllowGet);
+        }
+
+        public bool updateUser(int id_user, string name_user, string phone_user, string address_user, string email_user, int id_tier)
+        {
+            user patient = new user();
+            bool result = patient.Update(id_user, name_user, phone_user, address_user, email_user, id_tier);
+            return result;
+        }
+
+        public bool deleteUser(int id_user)
+        {
+            user patient = new user();
+            bool result = patient.Delete(id_user);
+            return result;
         }
 
 
