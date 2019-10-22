@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\TemplateMVC.dll.config
 C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\TemplateMVC.dll
 C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\TemplateMVC.pdb
@@ -45,3 +46,74 @@ C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\MySql.Data.xml
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csprojAssemblyReference.cache
 C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csproj.CopyComplete
+=======
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\TemplateMVC.dll.config
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\TemplateMVC.dll
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\TemplateMVC.pdb
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\System.Web.Helpers.dll
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\System.Web.Mvc.dll
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\System.Web.Razor.dll
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Deployment.dll
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.dll
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Razor.dll
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\System.Web.Razor.xml
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.xml
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Deployment.xml
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Razor.xml
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\System.Web.Helpers.xml
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\System.Web.Mvc.xml
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csprojResolveAssemblyReference.cache
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.dll
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.pdb
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\MySql.Data.dll
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\Renci.SshNet.dll
+C:\Users\hienphan_laptop\Documents\Visual Studio 2013\Projects\TemplateMVC\TemplateMVC\bin\MySql.Data.xml
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\TemplateMVC.dll.config
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\TemplateMVC.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\TemplateMVC.pdb
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Helpers.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Mvc.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Razor.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Deployment.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Razor.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Razor.xml
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.xml
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Deployment.xml
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Razor.xml
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Helpers.xml
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Mvc.xml
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csprojResolveAssemblyReference.cache
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.pdb
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Newtonsoft.Json.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Newtonsoft.Json.xml
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\TemplateMVC.dll.config
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\TemplateMVC.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\TemplateMVC.pdb
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\MySql.Data.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Newtonsoft.Json.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Helpers.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Mvc.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Razor.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Deployment.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Razor.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Google.Protobuf.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\BouncyCastle.Crypto.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Renci.SshNet.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\MySql.Data.xml
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Newtonsoft.Json.xml
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Razor.xml
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.xml
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Deployment.xml
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Razor.xml
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Helpers.xml
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Mvc.xml
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csprojAssemblyReference.cache
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csproj.CoreCompileInputs.cache
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csproj.CopyComplete
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.dll
+D:\LV\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.pdb
+>>>>>>> Stashed changes

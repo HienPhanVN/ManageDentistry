@@ -24,7 +24,7 @@ namespace TemplateMVC.Controllers
             try
             {
                 conn.Open();
-                String sql = "SELECT * FROM sakila.actor;";
+                String sql = "SELECT * FROM user;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (DbDataReader reader = cmd.ExecuteReader())
                 {

@@ -16,7 +16,11 @@ namespace TemplateMVC.Controllers
             
             string host = "127.0.0.1";
             int port = 3306;
+<<<<<<< Updated upstream
             string database = "managerdentist";
+=======
+            string database = "managerdentis";
+>>>>>>> Stashed changes
             string username = "admin";
             string password = "admin";
 
