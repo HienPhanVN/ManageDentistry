@@ -103,48 +103,14 @@ namespace TemplateMVC.Controllers
         }
 
 
-        public bool Create(string qrCode, string name, int age, string sex, string address, string phone, string insuranceCode)
+        public bool createUser(string name_user, string phone_user, string address_user, string email_user, int id_tier)
         {
-            MySqlConnection conn = DBUtils.GetDBConnection();
-            conn.Open();
-            String sql = "INSERT INTO patient(qrCode,name,age,sex,address,phone,insuranceCode) VALUES(?qrCode,?name,?age,?sex,?address,?phone,?insuranceCode)";
-            MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
-            try
-            {
-                cmd.Parameters.Add("?qrCode", MySqlDbType.VarChar).Value = qrCode;
-                cmd.Parameters.Add("?name", MySqlDbType.VarChar).Value = name;
-                cmd.Parameters.Add("?age", MySqlDbType.Int32).Value = age;
-                cmd.Parameters.Add("?sex", MySqlDbType.VarChar).Value = sex;
-                cmd.Parameters.Add("?address", MySqlDbType.VarChar).Value = address;
-                cmd.Parameters.Add("?phone", MySqlDbType.VarChar).Value = phone;
-                cmd.Parameters.Add("?insuranceCode", MySqlDbType.VarChar).Value = insuranceCode;
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception e) {
-                Console.WriteLine(e.ToString());
-                return false;
-            }
-            return true;
+            user patient = new user();
+            bool result = patient.Create(name_user, phone_user, address_user, email_user, id_tier);
+            return result;
         }
 
-        public bool Delete(int id)
-        {
-            MySqlConnection conn = DBUtils.GetDBConnection();
-            conn.Open();
-            String sql = "DELETE FROM patient WHERE idPatient=@id";
-            MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
-            try
-            {
-                cmd.Parameters.Add("?id", MySqlDbType.Int32).Value = id;
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-                return false;
-            }
-            return true;
-        }
+        
     
     }   //end class
 }       //end namespace
