@@ -19,7 +19,7 @@ namespace TemplateMVC.Controllers
         public ActionResult managepatient() 
         {
             return View();
-<<<<<<< HEAD
+
         }
 
         public ActionResult managedoctor()
@@ -48,13 +48,9 @@ namespace TemplateMVC.Controllers
         }
 
 
-        public ActionResult getAllPatient()
-=======
-        }
-        
+    
 
         public ActionResult getAllUser()
->>>>>>> PVDHien
         {
             user patient = new user();                        
             return this.Json(patient.Read(), JsonRequestBehavior.AllowGet);
