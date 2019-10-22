@@ -80,7 +80,32 @@ namespace TemplateMVC.Controllers
         {
             return View();
         }
-        
+
+        public ActionResult managedoctor()
+        {
+            return View();
+        }
+
+        public ActionResult manageproduct()
+        {
+            return View();
+        }
+
+        public ActionResult managebill()
+        {
+            return View();
+        }
+
+        public ActionResult managecategory()
+        {
+            return View();
+        }
+
+        public ActionResult manageill()
+        {
+            return View();
+        }
+
 
         public ActionResult getAllPatient()
         {
