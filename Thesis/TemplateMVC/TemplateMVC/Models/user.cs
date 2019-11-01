@@ -87,7 +87,8 @@ namespace TemplateMVC.Models
                             user_temp.phone_user = reader.GetString(2);
                             user_temp.address_user = reader.GetString(3);
                             user_temp.email_user = reader.GetString(4);
-                            user_temp.id_user = reader.GetInt32(5);
+                            user_temp.id_tier = reader.GetInt32(5);
+                            //Debug.WriteLine(reader.GetInt32(5));
                             list.Add(user_temp);                            
                         }
                     }

@@ -73,3 +73,7 @@ D:\LV\TLTN\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.
 D:\LV\TLTN\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csproj.CopyComplete
 D:\LV\TLTN\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.dll
 D:\LV\TLTN\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.pdb
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.Mvc.dll
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.xml
+C:\Users\hienphan_laptop\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.Mvc.xml

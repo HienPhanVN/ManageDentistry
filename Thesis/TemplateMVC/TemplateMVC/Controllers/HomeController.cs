@@ -10,11 +10,33 @@ using MySql.Data.MySqlClient;
 using System.Data.Common;
 using System.Data;
 using TemplateMVC.Models;
+using PagedList;
+using System.Diagnostics;
 
 namespace TemplateMVC.Controllers
 {
     public class HomeController : Controller
     {
+
+        public object pageUser(int? page) {
+            
+
+            user tempUser = new user();
+
+            var allUser = tempUser.Read();
+
+            //foreach (user temp in allUser) {
+            //    Debug.WriteLine(temp.id_tier);
+            //}
+
+            var pageNumber = page ?? 1;
+
+            var onePageOfUsers = allUser.ToPagedList(pageNumber, 5);
+
+            ViewBag.OnePageOfUsers = onePageOfUsers;
+
+            return View();
+        }
         
         public ActionResult managepatient() 
         {
