@@ -72,11 +72,11 @@ namespace TemplateMVC.Controllers
 
     
 
-        public ActionResult getAllUser()
+        /*public ActionResult getAllUser()
         {
             user patient = new user();                        
             return this.Json(patient.Read(), JsonRequestBehavior.AllowGet);
-        }
+        }*/
 
         public bool updateUser(int id_user, string name_user, string phone_user, string address_user, string email_user, int id_tier)
         {

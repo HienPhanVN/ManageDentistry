@@ -274,41 +274,24 @@
             </div>
         </div>
 
-        <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <table id="user" class="table table-striped table-bordered" style="width:100%">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Address</th>
-                    <th>Sex</th>
                     <th>Tier</th>
                     <th>Email</th>
                     <th>Tier</th>
                     <th>Select</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                    <td>Patient</td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit") |
-                        @Html.ActionLink("Details", "Details") |
-                        @Html.ActionLink("Delete", "Delete")
-                    </td>
-                </tr>
-            </tbody>
+            
             <tfoot>
                 <tr>
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Address</th>
-                    <th>Sex</th>
                     <th>Tier</th>
                     <th>Email</th>
                     <th>Tier</th>
@@ -397,6 +380,25 @@
 
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
         <script src="js/all.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $.getJSON("http://localhost:63440/Home/getAllUser", function (data) {
+                    var patient_data = '';
+                    $.each(data, function (key, value) {
+                        patient_data += '<tr>';
+                        patient_data += '<td>' + value.id_user + '</td>';
+                        patient_data += '<td>' + value.name_user + '</td>';
+                        patient_data += '<td>' + value.phone_user + '</td>';
+                        patient_data += '<td>' + value.address_user + '</td>';
+                        patient_data += '<td>' + value.email_user + '</td>';
+                        patient_data += '<td>' + value.tier_user + '</td>';
+                        patient_data += '</tr>';
+                    });
+                    $('#user').append(patient_data);
+                });
+            });
+        </script>
 </body>
 </html>
 
