@@ -257,6 +257,7 @@
                             Make sure ?
                         </div>
                         <input type="text" id="id_user" class="form-control">
+                        <input type="hidden" id="blabla" />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -289,8 +290,8 @@
                 <td>@product.address_user</td>
                 <td>@product.email_user</td>
                 <td>@product.id_tier</td>
-                <td><button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalEdit" onclick="deleteUser(id_user)">Edit Patient</button>
-                    <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalDelete" onclick=" Delete(id_user)">Delete Patient</button></td>
+                <td><button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalEdit" onclick="deleteUser(@product.id_user)">Edit Patient</button>
+                    <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalDelete" onclick=" Delete(@product.id_user)">Delete Patient</button></td>
             </tr>   
         }
        
@@ -394,7 +395,18 @@
     </script>
 
     <script>
+        function Delete(id_user) {
+            $.ajax({
+                url: "http://localhost:63440/Home/deleteUser",                            
+                type: 'GET',                
+                data: {
+                    id_user: id_user                    
+                },
+                success: function (result) {
+                    console.log(result);
 
+              }});
+        }
     </script>
 </body>
 </html>

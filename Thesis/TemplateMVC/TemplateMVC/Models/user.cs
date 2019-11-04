@@ -52,7 +52,7 @@ namespace TemplateMVC.Models
             conn.Open();
             String sql = "DELETE FROM `managerdentist`.`user` WHERE (`id_user` = @id_user)";
             MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
-            Debug.WriteLine(id_user);
+            //Debug.WriteLine(id_user);
             try
             {
                 cmd.Parameters.Add("?id_user", MySqlDbType.Int32).Value = id_user;
