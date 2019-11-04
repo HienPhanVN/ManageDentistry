@@ -51,6 +51,9 @@ namespace TemplateMVC.Models
             MySqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
             String sql = "DELETE FROM `managerdentist`.`user` WHERE (`id_user` = @id_user)";
+            //String sql = "DELETE `managerdentist`.`ill`, `managerdentist`.`account`, `managerdentist`.`user`  FROM `managerdentist`.`user` INNER JOIN `managerdentist`.`ill` INNER JOIN `managerdentist`.`account`  WHERE `managerdentist`.`user`.`id_user` = `managerdentist`.`ill`.id_user AND `managerdentist`.`ill`.id_user = `managerdentist`.`account`.id_user;";
+            
+
             MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
             //Debug.WriteLine(id_user);
             try
