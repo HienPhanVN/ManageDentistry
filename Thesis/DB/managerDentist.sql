@@ -36,8 +36,8 @@ ALTER TABLE `managerdentist`.`user`
 ADD CONSTRAINT `fk_tier_user`
   FOREIGN KEY (`id_tier`)
   REFERENCES `managerdentist`.`tier` (`id_tier`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
 
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -67,8 +67,8 @@ CREATE TABLE IF NOT EXISTS `managerdentist`.`account` (
   CONSTRAINT `fk_user_account`
     FOREIGN KEY (`id_user`)
     REFERENCES `managerdentist`.`user` (`id_user`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
     
     
 SET FOREIGN_KEY_CHECKS=0;
@@ -173,18 +173,18 @@ SET FOREIGN_KEY_CHECKS=1;
   CONSTRAINT `fk_company_product`
     FOREIGN KEY (`id_company`)
     REFERENCES `managerdentist`.`company` (`id_company`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_category_product`
     FOREIGN KEY (`id_category`)
     REFERENCES `managerdentist`.`category` (`id_category`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_bill_product`
     FOREIGN KEY (`id_bill`)
     REFERENCES `managerdentist`.`bill` (`id_bill`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
     
 SET FOREIGN_KEY_CHECKS=0;
 TRUNCATE TABLE `managerdentist`.`product`;
@@ -212,8 +212,8 @@ SET FOREIGN_KEY_CHECKS=1;
   CONSTRAINT `fk_product_historyProduct`
     FOREIGN KEY (`id_product`)
     REFERENCES `managerdentist`.`product` (`id_product`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 SET FOREIGN_KEY_CHECKS=0;
 TRUNCATE TABLE `managerdentist`.`historyproduct`;
@@ -242,8 +242,8 @@ CREATE TABLE IF NOT EXISTS `managerdentist`.`ill` (
   CONSTRAINT `fk_user_ill`
     FOREIGN KEY (`id_user`)
     REFERENCES `managerdentist`.`user` (`id_user`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
     
 SET FOREIGN_KEY_CHECKS=0;
 TRUNCATE TABLE `managerdentist`.`ill`;
@@ -270,8 +270,8 @@ CREATE TABLE IF NOT EXISTS `managerdentist`.`historyill` (
   CONSTRAINT `fk_ill_historyIll`
     FOREIGN KEY (`id_ill`)
     REFERENCES `managerdentist`.`ill` (`id_ill`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
     
 SET FOREIGN_KEY_CHECKS=0;
 TRUNCATE TABLE `managerdentist`.`historyill`;
