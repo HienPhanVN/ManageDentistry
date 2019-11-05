@@ -274,17 +274,21 @@
             <th>Select</th>
         </tr>
 
-        @foreach (var product in ViewBag.OnePageOfUsers)
+        @foreach (var User in ViewBag.OnePageOfUsers)
         {
             <tr>
-                <td>@product.id_user</td>
-                <td>@product.name_user</td>
-                <td>@product.phone_user</td>
-                <td>@product.address_user</td>
-                <td>@product.email_user</td>
-                <td>@product.id_tier</td>
+                <td>@User.id_user</td>
+                <td>@User.name_user</td>
+                <td>@User.phone_user</td>
+                <td>@User.address_user</td>
+                <td>@User.email_user</td>
+                <td>@User.id_tier</td>
                 <td>
+<<<<<<< HEAD
                     <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalEdit">Edit Patient</button>
+=======
+                    <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalEdit" onclick="deleteUser(@User.id_user)">Edit Patient</button>
+>>>>>>> PVDHiennew
                     <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalDelete">Delete Patient</button>
                 </td>
             </tr>
@@ -294,7 +298,6 @@
         @Html.PagedListPager((IPagedList)ViewBag.OnePageOfUsers, page => Url.Action("pageUser", new { page }))
 
     </table>
-    @*</section>*@
 
     <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
         <div class="container">

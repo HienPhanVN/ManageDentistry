@@ -17,31 +17,10 @@ namespace TemplateMVC.Controllers
 {
     public class HomeController : Controller
     {
-
-        public object pageUser(int? page) {
-            
-
-            user tempUser = new user();
-
-            var allUser = tempUser.Read();
-
-            //foreach (user temp in allUser) {
-            //    Debug.WriteLine(temp.id_tier);
-            //}
-
-            var pageNumber = page ?? 1;
-
-            var onePageOfUsers = allUser.ToPagedList(pageNumber, 5);
-
-            ViewBag.OnePageOfUsers = onePageOfUsers;
-
-            return View();
-        }
         
         public ActionResult managepatient() 
         {
             return View();
-
         }
 
         public ActionResult managedoctor()
@@ -69,22 +48,78 @@ namespace TemplateMVC.Controllers
             return View();
         }
 
+        //public ActionResult getAllAccount()
+        //{
+        //    account patient = new account();
+        //    return this.Json(patient.Read(), JsonRequestBehavior.AllowGet);
+        //}
 
-    
-
-        /*public ActionResult getAllUser()
+        //create
+        public bool createUser(string name_user, string phone_user, string address_user, string email_user, int id_tier)
         {
-            user patient = new user();                        
-            return this.Json(patient.Read(), JsonRequestBehavior.AllowGet);
-        }*/
+            user patient = new user();
+            bool result = patient.Create(name_user, phone_user, address_user, email_user, id_tier);
+            return result;
+        }
 
+        public bool createAccount(string username_account, string password_account, int id_user)
+        {
+            account Account = new account();
+            bool result = Account.Create(username_account, password_account, id_user);
+            return result;
+        }
+
+        //read
+        public object pageUser(int? page)
+        {
+
+            user tempUser = new user();
+
+            var allUser = tempUser.Read();
+
+            var pageNumber = page ?? 1;
+
+            var onePageOfUsers = allUser.ToPagedList(pageNumber, 5);
+
+            ViewBag.OnePageOfUsers = onePageOfUsers;
+
+            return View();
+        }
+
+
+        public object pageAccount(int? page)
+        {
+
+            account accountTemp = new account();
+
+            var allAccount = accountTemp.Read();
+
+            var pageNumber = page ?? 1;
+
+            var onePageOfAccounts = allAccount.ToPagedList(pageNumber, 5);
+
+            ViewBag.OnePageOfAccounts = onePageOfAccounts;
+
+            return View();
+
+        }
+
+        //update
         public bool updateUser(int id_user, string name_user, string phone_user, string address_user, string email_user, int id_tier)
         {
             user patient = new user();
             bool result = patient.Update(id_user, name_user, phone_user, address_user, email_user, id_tier);
             return result;
         }
+        public bool updateAccount(int id_account, string username_account, string password, int id_user)
+        {
+            account Account = new account();
+            bool result = Account.Update(id_account, username_account, password, id_user);
+            return result;
+        }
 
+
+        //delete
         public bool deleteUser(int id_user)
         {
             user patient = new user();
@@ -92,14 +127,13 @@ namespace TemplateMVC.Controllers
             return result;
         }
 
-
-        public bool createUser(string name_user, string phone_user, string address_user, string email_user, int id_tier)
+        public bool deleteAccount(int id_account)
         {
-            user patient = new user();
-            bool result = patient.Create(name_user, phone_user, address_user, email_user, id_tier);
+            account Account = new account();
+            bool result = Account.Delete(id_account);
             return result;
-        }        
-    
+        }
+
     }   //end class
 }       //end namespace
 
