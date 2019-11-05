@@ -88,15 +88,12 @@
     <!-- END nav -->
 
     <div class="container">
-
         <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#myModal">Add Patient</button>
         <br />
-
         <!-- Modal -->
         <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
-
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -109,7 +106,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Name</span>
                                 </div>
-                                <input type="text" id="addQrCode" class="form-control">
+                                <input type="text" id="create_name" class="form-control">
                             </div>
                         </div>
                         <div class="row">
@@ -117,7 +114,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Phone</span>
                                 </div>
-                                <input type="text" id="addName" class="form-control">
+                                <input type="text" id="create_phone" class="form-control">
                             </div>
                         </div>
                         <div class="row">
@@ -125,27 +122,16 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Address</span>
                                 </div>
-                                <input type="number" id="addAge" class="form-control">
+                                <input type="text" id="create_address" class="form-control">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="input-group mb-3 col-lg-12">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Sex</span>
-                                </div>
-                                <select class="custom-select" id="addSex">
-                                    <option selected>Choose...</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
-                            </div>
-                        </div>
+                        
                         <div class="row">
                             <div class="input-group mb-3 col-lg-12">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Email</span>
                                 </div>
-                                <input type="text" id="addAddress" class="form-control">
+                                <input type="text" id="create_email" class="form-control">
                             </div>
                         </div>
                         <div class="row">
@@ -153,17 +139,17 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Tier</span>
                                 </div>
-                                <select class="custom-select" id="addSex">
+                                <select class="custom-select" id="create_tier">
                                     <option selected>Choose...</option>
-                                    <option value="male">Doctor</option>
-                                    <option value="female">Manager</option>
-                                    <option value="female">Patient</option>
+                                    <option value="1">Doctor</option>
+                                    <option value="2">Manager</option>
+                                    <option value="3">Patient</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success" onclick="addPatient()">Save</button>
+                        <button type="button" class="btn btn-success" onclick="Create($('#create_name').val(), $('#create_phone').val(), $('#create_address').val(), $('#create_email').val(), $('#create_tier').val())">Save</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -177,7 +163,6 @@
     <!--Edit Modal -->
     <div id="modalEdit" class="modal fade" role="dialog">
         <div class="modal-dialog">
-
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
@@ -188,9 +173,17 @@
                     <div class="row">
                         <div class="input-group mb-3 col-lg-12">
                             <div class="input-group-prepend">
+                                <span class="input-group-text">ID</span>
+                            </div>
+                            <input type="text" id="id_user" class="form-control" readonly>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-3 col-lg-12">
+                            <div class="input-group-prepend">
                                 <span class="input-group-text">Name</span>
                             </div>
-                            <input type="text" id="id_name" class="form-control">
+                            <input type="text" id="user_name" class="form-control">
                         </div>
                     </div>
                     <div class="row">
@@ -198,7 +191,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Phone</span>
                             </div>
-                            <input type="text" id="id_phone" class="form-control">
+                            <input type="text" id="user_phone" class="form-control">
                         </div>
                     </div>
                     <div class="row">
@@ -206,7 +199,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Address</span>
                             </div>
-                            <input type="text" id="id_address" class="form-control">
+                            <input type="text" id="user_address" class="form-control">
                         </div>
                     </div>
 
@@ -215,7 +208,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Email</span>
                             </div>
-                            <input type="text" id="id_email" class="form-control">
+                            <input type="text" id="user_email" class="form-control">
                         </div>
                     </div>
                     <div class="row">
@@ -223,17 +216,18 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Tier</span>
                             </div>
-                            <select class="custom-select" id="addSex">
+                            @*<input type="hidden" id="id_tier" class="form-control">*@
+                            <select class="custom-select" id="id_tier">
                                 <option selected>Choose...</option>
-                                <option value="male">Doctor</option>
-                                <option value="female">Manager</option>
-                                <option value="female">Patient</option>
+                                <option value=1>Doctor</option>
+                                <option value=2>Manager</option>
+                                <option value=3>Patient</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" onclick="addPatient()">Save</button>
+                    <button type="button" class="btn btn-success" onclick="Update($('#id_user').val(),$('#user_name').val(),$('#user_phone').val(),$('#user_address').val(),$('#user_email').val(),$('#id_tier').val())">Save</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -256,11 +250,11 @@
                         <div class="input-group mb-3 col-lg-12">
                             Make sure ?
                         </div>
-                        <input type="text" id="id_user" class="form-control">
+                        <input type="text" id="id_user" class="form-control" readonly>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick=" Delete($('#id_user').val())">Delete Patient</button></td>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick=" Delete($('#id_user').val())">Delete Patient</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -290,14 +284,12 @@
                 <td>@product.email_user</td>
                 <td>@product.id_tier</td>
                 <td>
-                    <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalEdit" onclick="deleteUser(@product.id_user)">Edit Patient</button>
+                    <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalEdit">Edit Patient</button>
                     <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalDelete">Delete Patient</button>
                 </td>
             </tr>
 
         }
-
-
         <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
         @Html.PagedListPager((IPagedList)ViewBag.OnePageOfUsers, page => Url.Action("pageUser", new { page }))
 
@@ -387,12 +379,29 @@
     <script>
         $('#user tr').click(function () {
             var id_user = $('#id_user').val($(this).find("td").eq(0).html());
-            var id_name = $('#id_name').val($(this).find("td").eq(1).html());
-            var id_phone = $('#id_phone').val($(this).find("td").eq(2).html());
-            var id_address = $('#id_address').val($(this).find("td").eq(3).html());
-            var id_email = $('#id_email').val($(this).find("td").eq(4).html());
-            var id_tier = $('#id_tier').val($(this).find("td").eq(5).html());
+            var user_name = $('#user_name').val($(this).find("td").eq(1).html());
+            var user_phone = $('#user_phone').val($(this).find("td").eq(2).html());
+            var user_address = $('#user_address').val($(this).find("td").eq(3).html());
+            var user_email = $('#user_email').val($(this).find("td").eq(4).html());
+            //var id_tier = $('#id_tier').val($(this).find("td").eq(5).html());
             console.log(id_user);
+        });
+    </script>
+
+    <script>
+        $('#user tr').click(function () {
+            var id_tier = $('#id_tier').val($(this).find("td").eq(5).html());
+            console.log(id_tier);
+            if (id_tier == 1) {
+                id_tier = 'doctor';
+            }
+            else if (id_tier == 2) {
+                id_tier = 'manager';
+            }
+            else if (id_tier == 3) {
+                id_tier = 'patient';
+            }
+            else id_tier = 'else';
         });
     </script>
 
@@ -410,8 +419,50 @@
                     window.location = "../Home/pageUser"
                 }
             });
+        }
+    </script>
 
+    <script>
+        function Update(id_user, name_user, phone_user, address_user, email_user, id_tier) {
+            $.ajax({
+                url: "http://localhost:63440/Home/updateUser",
+                type: 'GET',
+                data: {
+                    id_user: id_user,
+                    name_user: name_user,
+                    phone_user: phone_user,
+                    address_user: address_user,
+                    email_user: email_user,
+                    id_tier: id_tier
+                },
+                success: function (result) {
+                    console.log(result);
+                    alert("Update Successful!");
+                    window.location = "../Home/pageUser"
+                }
+                
+            });
+        }
+    </script>
 
+    <script>
+        function Create(create_name,create_phone,create_address,create_email,create_tier) {
+            $.ajax({
+                url: "http://localhost:63440/Home/createUser",
+                type: 'GET',
+                data: {
+                    name_user: create_name,
+                    phone_user: create_phone,
+                    address_user: create_address,
+                    email_user: create_email,
+                    id_tier: create_tier
+                },
+                success: function (result) {
+                    console.log(result);
+                    alert("Create Successful!");
+                    window.location = "../Home/pageUser"
+                }
+            });
         }
     </script>
 </body>
