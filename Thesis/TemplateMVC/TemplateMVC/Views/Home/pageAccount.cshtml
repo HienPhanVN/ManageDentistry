@@ -1,4 +1,5 @@
-﻿
+﻿@model TemplateMVC.Models.account
+
 @{
     ViewBag.Title = "pageAccount";
     Layout = "~/Views/Shared/_Mylayout.cshtml";
@@ -66,12 +67,11 @@
                     <!-- Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            User
+                            Information
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/Home/managepatient">Patient</a>
-                            <a class="dropdown-item" href="/Home/managedoctor">Doctor</a>
-                            <a class="dropdown-item" href="/Home/managemanager">Manager</a>
+                            <a class="dropdown-item" href="/Home/pageUser">User</a>
+                            <a class="dropdown-item" href="/Home/pageAccount">Account</a>
                         </div>
                     </li>
 
@@ -100,74 +100,42 @@
         <!-- Modal -->
         <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
-
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Add Patient</h4>
+                        <h4 class="modal-title">Add Account</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="input-group mb-3 col-lg-12">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Name</span>
+                                    <span class="input-group-text">Username</span>
                                 </div>
-                                <input type="text" id="addQrCode" class="form-control">
+                                <input type="text" id="create_username" class="form-control">
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="input-group mb-3 col-lg-12">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Phone</span>
+                                    <span class="input-group-text">Password</span>
                                 </div>
-                                <input type="text" id="addName" class="form-control">
+                                <input type="text" id="create_password" class="form-control">
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="input-group mb-3 col-lg-12">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Address</span>
+                                    <span class="input-group-text">ID User</span>
                                 </div>
-                                <input type="number" id="addAge" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-group mb-3 col-lg-12">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Sex</span>
-                                </div>
-                                <select class="custom-select" id="addSex">
-                                    <option selected>Choose...</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-group mb-3 col-lg-12">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Email</span>
-                                </div>
-                                <input type="text" id="addAddress" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-group mb-3 col-lg-12">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Tier</span>
-                                </div>
-                                <select class="custom-select" id="addSex">
-                                    <option selected>Choose...</option>
-                                    <option value="male">Doctor</option>
-                                    <option value="female">Manager</option>
-                                    <option value="female">Patient</option>
-                                </select>
+                                <input type="text" id="create_iduser" class="form-control">
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success" onclick="addPatient()">Save</button>
+                        <button type="button" class="btn btn-success" onclick="Create($('#create_username').val(),$('#create_password').val(),$('#create_iduser').val())">Save</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -185,59 +153,48 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Edit Patient</h4>
+                    <h4 class="modal-title">Edit Account</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="input-group mb-3 col-lg-12">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Name</span>
+                                <span class="input-group-text">ID</span>
                             </div>
-                            <input type="text" id="id_name" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-group mb-3 col-lg-12">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Phone</span>
-                            </div>
-                            <input type="text" id="id_phone" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-group mb-3 col-lg-12">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Address</span>
-                            </div>
-                            <input type="text" id="id_address" class="form-control">
+                            <input type="text" id="id_account" class="form-control" readonly>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-group mb-3 col-lg-12">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Email</span>
+                                <span class="input-group-text">Username</span>
                             </div>
-                            <input type="text" id="id_email" class="form-control">
+                            <input type="text" id="username_account" class="form-control">
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="input-group mb-3 col-lg-12">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Tier</span>
+                                <span class="input-group-text">Password</span>
                             </div>
-                            <select class="custom-select" id="addSex">
-                                <option selected>Choose...</option>
-                                <option value="male">Doctor</option>
-                                <option value="female">Manager</option>
-                                <option value="female">Patient</option>
-                            </select>
+                            <input type="text" id="password_account" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-group mb-3 col-lg-12">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">ID User</span>
+                            </div>
+                            <input type="text" id="id_user" class="form-control">
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" onclick="addPatient()">Save</button>
+                    <button type="button" class="btn btn-success" onclick="Update($('#id_account').val(), $('#username_account').val(), $('#password_account').val(), $('#id_user').val())">Save</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -252,7 +209,7 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Delete Patient</h4>
+                    <h4 class="modal-title">Delete Account</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -260,11 +217,11 @@
                         <div class="input-group mb-3 col-lg-12">
                             Make sure ?
                         </div>
-                        <input type="text" id="id_user" class="form-control">
+                        <input type="text" id="id_account" class="form-control" readonly>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick=" Delete($('#id_user').val())">Delete Patient</button></td>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick=" Delete($('#id_account').val())">Delete Account</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -273,14 +230,14 @@
     </div>
 
     <div class="table-responsive">
-        <table id="user" class="table table-striped table-bordered " style="width:100%">
+        <table id="account" class="table table-striped table-bordered " style="width:100%">
 
             <tr>
                 <th>ID</th>
-                <th>Tài Khoản</th>
-                <th>Mật Khẩu</th>
+                <th>Username</th>
+                <th>Password</th>
                 <th>ID_user</th>
-                <th>Chức năng</th>
+                <th>Select</th>
             </tr>
 
             @foreach (var account in ViewBag.OnePageOfAccounts)
@@ -291,16 +248,15 @@
                     <td>@account.Password_account</td>
                     <td>@account.Id_user</td>
                     <td>
-                        <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalEdit" onclick="deleteUser(@account.Id_user)">Edit Patient</button>
+                        <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalEdit">Edit Patient</button>
                         <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalDelete">Delete Patient</button>
                     </td>
                 </tr>
-
             }
 
 
             <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
-            @Html.PagedListPager((IPagedList)ViewBag.OnePageOfAccounts, page => Url.Action("pageUser", new { page }))
+            @Html.PagedListPager((IPagedList)ViewBag.OnePageOfAccounts, page => Url.Action("pageAccount", new { page }))
 
         </table>
     </div>
@@ -385,33 +341,69 @@
     <script src="js/all.js"></script>
 
     <script>
-        $('#user tr').click(function () {
-            var id_user = $('#id_user').val($(this).find("td").eq(0).html());
-            var id_name = $('#id_name').val($(this).find("td").eq(1).html());
-            var id_phone = $('#id_phone').val($(this).find("td").eq(2).html());
-            var id_address = $('#id_address').val($(this).find("td").eq(3).html());
-            var id_email = $('#id_email').val($(this).find("td").eq(4).html());
-            var id_tier = $('#id_tier').val($(this).find("td").eq(5).html());
-            console.log(id_user);
+        $('#account tr').click(function () {
+            var id_account = $('#id_account').val($(this).find("td").eq(0).html());
+            var username_account = $('#username_account').val($(this).find("td").eq(1).html());
+            var password_account = $('#password_account').val($(this).find("td").eq(2).html());
+            var id_user = $('#id_user').val($(this).find("td").eq(3).html());
+            console.log(id_account);
         });
     </script>
 
     <script>
-        function Delete(id_user) {
+        function Create(create_username, create_password, create_iduser) {
             $.ajax({
-                url: "http://localhost:63440/Home/deleteUser",
+                url: "http://localhost:63440/Home/createAccount",
                 type: 'GET',
                 data: {
+                    username_account: create_username,
+                    password_account: create_password,
+                    id_user: create_iduser
+                },
+                success: function (result) {
+                    console.log(result);
+                    alert("Create Successful!");
+                    window.location = "../Home/pageAccount"
+                }
+            });
+        }
+    </script>
+
+    <script>
+        function Update(id_account, username_account, password_account, id_user) {
+            $.ajax({
+                url: "http://localhost:63440/Home/updateAccount",
+                type: 'GET',
+                data: {
+                    id_account: id_account,
+                    username_account: username_account,
+                    password_account: password_account,
                     id_user: id_user
                 },
                 success: function (result) {
                     console.log(result);
+                    alert("Update Successful!");
+                    window.location = "../Home/pageAccount"
+                }
+
+            });
+        }
+    </script>
+
+    <script>
+        function Delete(id_account) {
+            $.ajax({
+                url: "http://localhost:63440/Home/deleteAccount",
+                type: 'GET',
+                data: {
+                    id_account: id_account
+                },
+                success: function (result) {
+                    console.log(result);
                     alert("Delete successful!");
-                    window.location = "../Home/pageUser"
+                    window.location = "../Home/pageAccount"
                 }
             });
-
-
         }
     </script>
 </body>

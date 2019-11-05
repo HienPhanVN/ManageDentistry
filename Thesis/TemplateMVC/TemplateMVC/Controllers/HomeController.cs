@@ -111,10 +111,10 @@ namespace TemplateMVC.Controllers
             bool result = patient.Update(id_user, name_user, phone_user, address_user, email_user, id_tier);
             return result;
         }
-        public bool updateAccount(int id_account, string username_account, string password, int id_user)
+        public bool updateAccount(int id_account, string username_account, string password_account, int id_user)
         {
             account Account = new account();
-            bool result = Account.Update(id_account, username_account, password, id_user);
+            bool result = Account.Update(id_account, username_account, password_account, id_user);
             return result;
         }
 
