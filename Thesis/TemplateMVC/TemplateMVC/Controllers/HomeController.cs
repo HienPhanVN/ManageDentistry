@@ -70,7 +70,7 @@ namespace TemplateMVC.Controllers
         }
 
         //read
-        public object pageUser(int? page)
+        public ActionResult pageUser(int? page)
         {
 
             user tempUser = new user();
@@ -87,7 +87,7 @@ namespace TemplateMVC.Controllers
         }
 
 
-        public object pageAccount(int? page)
+        public ActionResult pageAccount(int? page)
         {
 
             account accountTemp = new account();
