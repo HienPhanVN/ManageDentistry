@@ -14,7 +14,8 @@ namespace TemplateMVC.Controllers
         public static MySqlConnection GetDBConnection()
         {
             
-            string host = "127.0.0.1";
+            string host = "35.185.191.138";
+            //string host = "127.0.0.1";
             int port = 3306;
 <<<<<<< Updated upstream
             string database = "managerdentist";
