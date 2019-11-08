@@ -1,7 +1,13 @@
-﻿using MySql.Data.MySqlClient;
+﻿    using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using TemplateMVC.Models;
 using TemplateMVC.Controllers;
+using System.Web.Mvc;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Diagnostics;
 
 namespace TemplateMVC.Models
@@ -15,8 +21,6 @@ namespace TemplateMVC.Models
         public string address_user;
         public string email_user;
         public int id_tier;
-       
-            
 
         public bool Create(string name_user, string phone_user, string address_user, string email_user, int id_tier)
         {
@@ -87,6 +91,7 @@ namespace TemplateMVC.Models
                             user_temp.address_user = reader.GetString(3);
                             user_temp.email_user = reader.GetString(4);
                             user_temp.id_tier = reader.GetInt32(5);
+                            //Debug.WriteLine(reader.GetInt32(5));
                             list.Add(user_temp);                            
                         }
                     }
@@ -109,6 +114,7 @@ namespace TemplateMVC.Models
         public bool Update(int id_user, string name_user, string phone_user, string address_user, string email_user, int id_tier)
         {
             MySqlConnection conn = DBUtils.GetDBConnection();
+            //Date 20/10 include DBUtils
             conn.Open();
             String sql = "UPDATE user SET name_user = ?name_user , phone_user = ?phone_user, address_user = ?address_user, email_user = ?email_user, id_tier = ?id_tier WHERE id_user = ?id_user";
             MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);

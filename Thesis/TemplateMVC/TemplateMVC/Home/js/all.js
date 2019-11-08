@@ -49,10 +49,6 @@ function deletePatient() {
     });
 }
 
-$(document).ready(function () {
-    $('#example').DataTable();
-});
-
 
 
 
