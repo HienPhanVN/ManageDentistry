@@ -80,3 +80,34 @@ D:\LV\TLTN\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.dll
 D:\LV\TLTN\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.Mvc.dll
 D:\LV\TLTN\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.xml
 D:\LV\TLTN\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.Mvc.xml
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\TemplateMVC.dll.config
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\TemplateMVC.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\TemplateMVC.pdb
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\MySql.Data.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Newtonsoft.Json.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.Mvc.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Helpers.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Mvc.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Razor.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Razor.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Google.Protobuf.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\BouncyCastle.Crypto.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Renci.SshNet.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\MySql.Data.xml
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Newtonsoft.Json.xml
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.xml
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.Mvc.xml
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Razor.xml
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.xml
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Razor.xml
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Helpers.xml
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Mvc.xml
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csprojAssemblyReference.cache
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csproj.CopyComplete
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.dll
+C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.pdb
