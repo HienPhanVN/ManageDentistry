@@ -190,6 +190,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\account.cs" />
+    <Compile Include="Models\ill.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\tier.cs" />
     <Compile Include="Models\user.cs" />
@@ -325,6 +326,7 @@
     <Content Include="Views\Home\ManageCategory.cshtml" />
     <Content Include="Views\Home\manageill.cshtml" />
     <Content Include="Views\Home\pageAccount.cshtml" />
+    <Content Include="Views\Home\pageIll.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

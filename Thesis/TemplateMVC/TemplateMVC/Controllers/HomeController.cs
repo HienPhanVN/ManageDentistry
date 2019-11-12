@@ -69,6 +69,13 @@ namespace TemplateMVC.Controllers
             return result;
         }
 
+        public bool createIll(string name_ill, string status_ill, int id_user)
+        {
+            ill Ill = new ill();
+            bool result = Ill.Create(name_ill, status_ill, id_user);
+            return result;
+        }
+
         //read
         public ActionResult pageUser(int? page)
         {
@@ -104,6 +111,22 @@ namespace TemplateMVC.Controllers
 
         }
 
+        public ActionResult pageIll(int? page)
+        {
+
+            ill tempIll = new ill();
+
+            var allIll = tempIll.Read();
+
+            var pageNumber = page ?? 1;
+
+            var onePageOfIlls = allIll.ToPagedList(pageNumber, 5);
+
+            ViewBag.onePageOfIlls = onePageOfIlls;
+
+            return View();
+        }
+
         //update
         public bool updateUser(int id_user, string name_user, string phone_user, string address_user, string email_user, int id_tier)
         {
@@ -118,6 +141,12 @@ namespace TemplateMVC.Controllers
             return result;
         }
 
+        public bool updateIll(int id_ill, string name_ill, string status_ill)
+        {
+            ill Ill = new ill();
+            bool result = Ill.Update(id_ill, name_ill, status_ill);
+            return result;
+        }
 
         //delete
         public bool deleteUser(int id_user)
@@ -131,6 +160,13 @@ namespace TemplateMVC.Controllers
         {
             account Account = new account();
             bool result = Account.Delete(id_account);
+            return result;
+        }
+
+        public bool deleteIll(int id_ill)
+        {
+            ill Ill = new ill();
+            bool result = Ill.Delete(id_ill);
             return result;
         }
 
