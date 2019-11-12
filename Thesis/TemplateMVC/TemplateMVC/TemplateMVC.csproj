@@ -316,12 +316,6 @@
     <Content Include="Home\scss\style.scss" />
     <Content Include="prepros-6.config" />
     <Content Include=".DS_Store" />
-    <Content Include="Views\Home\managepatient.cshtml" />
-    <Content Include="Views\Home\managedoctor.cshtml" />
-    <Content Include="Views\Home\manageproduct.cshtml" />
-    <Content Include="Views\Home\managebill.cshtml" />
-    <Content Include="Views\Home\ManageCategory.cshtml" />
-    <Content Include="Views\Home\manageill.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
