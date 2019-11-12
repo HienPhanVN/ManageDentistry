@@ -289,3 +289,16 @@ VALUES
     (10);
 SET FOREIGN_KEY_CHECKS=1;
 
+ALTER TABLE `managerdentist`.`product` 
+DROP FOREIGN KEY `fk_bill_product`;
+ALTER TABLE `managerdentist`.`product` 
+CHANGE COLUMN `id_bill` `id_bill` INT(11) NULL ,
+DROP INDEX `id_bill_UNIQUE` ;
+;
+ALTER TABLE `managerdentist`.`product` 
+ADD CONSTRAINT `fk_bill_product`
+  FOREIGN KEY (`id_bill`)
+  REFERENCES `managerdentist`.`bill` (`id_bill`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
+
