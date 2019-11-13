@@ -301,4 +301,17 @@ ADD CONSTRAINT `fk_bill_product`
   REFERENCES `managerdentist`.`bill` (`id_bill`)
   ON DELETE CASCADE
   ON UPDATE CASCADE;
+		
+        
+DROP PROCEDURE IF EXISTS naiveSearchNameUser;    
+DELIMITER //
+    CREATE PROCEDURE naiveSearchNameUser(IN nameUser varchar(45)) 
+	BEGIN     
+		SELECT id_user FROM managerdentist.user WHERE name_user LIKE CONCAT('%', nameUser, '%');
+	END
+   //
+DELIMITER ;
 
+-- CALL naiveSearchNameUser("name user 10");
+
+   
