@@ -190,8 +190,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\account.cs" />
+    <Compile Include="Models\bill.cs" />
+    <Compile Include="Models\category.cs" />
+    <Compile Include="Models\company.cs" />
+    <Compile Include="Models\historyIll.cs" />
+    <Compile Include="Models\historyproduct.cs" />
     <Compile Include="Models\ill.cs" />
     <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\product.cs" />
     <Compile Include="Models\tier.cs" />
     <Compile Include="Models\user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -327,6 +333,12 @@
     <Content Include="Views\Home\manageill.cshtml" />
     <Content Include="Views\Home\pageAccount.cshtml" />
     <Content Include="Views\Home\pageIll.cshtml" />
+    <Content Include="Views\Home\pageCompany.cshtml" />
+    <Content Include="Views\Home\pageHistoryIll.cshtml" />
+    <Content Include="Views\Home\pageCategory.cshtml" />
+    <Content Include="Views\Home\pageProduct.cshtml" />
+    <Content Include="Views\Home\pageHistoryproduct.cshtml" />
+    <Content Include="Views\Home\pageBill.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
