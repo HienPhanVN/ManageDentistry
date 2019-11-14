@@ -307,11 +307,11 @@ DROP PROCEDURE IF EXISTS naiveSearchNameUser;
 DELIMITER //
     CREATE PROCEDURE naiveSearchNameUser(IN nameUser varchar(45)) 
 	BEGIN     
-		SELECT id_user FROM managerdentist.user WHERE name_user LIKE CONCAT('%', nameUser, '%');
+		SELECT id_user, name_user, phone_user, address_user, email_user, managerdentist.user.id_tier, name_tier FROM managerdentist.user, managerdentist.tier WHERE name_user LIKE CONCAT('%', nameUser, '%') AND managerdentist.user.id_tier = managerdentist.tier.id_tier;
 	END
    //
 DELIMITER ;
 
--- CALL naiveSearchNameUser("name user 10");
+CALL naiveSearchNameUser("name user 10");-- 
 
    

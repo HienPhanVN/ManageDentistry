@@ -345,6 +345,14 @@ namespace TemplateMVC.Controllers
             return result;
         }
 
+        //Find user
+        public ActionResult findUser(string nameInput) {
+            user User = new user();
+            List<user> result = new List<user>();
+            result = User.findUser(nameInput);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
     }   //end class
 }       //end namespace
 
