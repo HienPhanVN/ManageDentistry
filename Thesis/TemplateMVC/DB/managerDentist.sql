@@ -11,16 +11,10 @@ SET FOREIGN_KEY_CHECKS=0;
 TRUNCATE TABLE `managerdentist`.`tier`;
 INSERT INTO `managerdentist`.`tier`(name_tier)
 VALUES
-	('name_tier 1'),
-	('name_tier 2'),
-	('name_tier 3'),
-	('name_tier 4'),
-	('name_tier 5'),
-	('name_tier 6'),
-	('name_tier 7'),
-	('name_tier 8'),
-	('name_tier 9'),
-    ('name_tier 10');
+	('Admin'),
+	('Doctor'),
+	('Secretary'),
+	('Patient');
 SET FOREIGN_KEY_CHECKS=1;
 
 CREATE TABLE IF NOT EXISTS `managerdentist`.`user` (
@@ -44,16 +38,16 @@ SET FOREIGN_KEY_CHECKS=0;
 TRUNCATE TABLE `managerdentist`.`user`;
 INSERT INTO `managerdentist`.`user`(name_user, phone_user, address_user, email_user, id_tier)
 VALUES
-	('name user 1', '0001', 'address user 1', 'user0001@mail.com.vn', 1),
-	('name user 2', '0002', 'address user 2', 'user0002@mail.com.vn', 2),
-	('name user 3', '0003', 'address user 3', 'user0003@mail.com.vn', 3),
-	('name user 4', '0004', 'address user 4', 'user0004@mail.com.vn', 4),
-	('name user 5', '0005', 'address user 5', 'user0005@mail.com.vn', 5),
-	('name user 6', '0006', 'address user 6', 'user0006@mail.com.vn', 6),
-	('name user 7', '0007', 'address user 7', 'user0007@mail.com.vn', 7),
-	('name user 8', '0008', 'address user 8', 'user0008@mail.com.vn', 8),
-	('name user 9', '0009', 'address user 9', 'user0009@mail.com.vn', 9),
-    ('name user 10', '0010', 'address user 10', 'user0010@mail.com.vn', 10);
+	('Doctor 1', '0001', 'address doctor 1', 'doctor0001@mail.com.vn', 2),
+    ('Doctor 2', '0002', 'address doctor 2', 'doctor0002@mail.com.vn', 2),
+    ('Doctor 3', '0002', 'address doctor 2', 'doctor0002@mail.com.vn', 2),
+    ('Secretary 1', '0001', 'address secretary 1', 'secretary0001@mail.com.vn', 3),
+    ('Secretary 2', '0002', 'address secretary 2', 'secretary0002@mail.com.vn', 3),
+    ('Secretary 3', '0003', 'address secretary 3', 'secretary0003@mail.com.vn', 3),
+	('Patient 1', '0001', 'address patient 1', 'patient0001@mail.com.vn', 4),
+	('Patient 2', '0002', 'address patient 2', 'patient0002@mail.com.vn', 4),
+	('Patient 3', '0003', 'address patient 3', 'patient0003@mail.com.vn', 4),
+	('Admin', '0005', 'address admin 5', 'admin0005@mail.com.vn', 1);
 SET FOREIGN_KEY_CHECKS=1;    
     
 CREATE TABLE IF NOT EXISTS `managerdentist`.`account` (
@@ -301,7 +295,67 @@ ADD CONSTRAINT `fk_bill_product`
   REFERENCES `managerdentist`.`bill` (`id_bill`)
   ON DELETE CASCADE
   ON UPDATE CASCADE;
-		
+  
+-- 	edit
+SET FOREIGN_KEY_CHECKS=0;
+ALTER TABLE `managerdentist`.`historyill` 
+ADD COLUMN `id_user` INT NOT NULL AFTER `id_ill`,
+ADD INDEX `fk_user_historyIll_idx` (`id_user` ASC);
+;
+ALTER TABLE `managerdentist`.`historyill` 
+ADD CONSTRAINT `fk_user_historyIll`
+  FOREIGN KEY (`id_user`)
+  REFERENCES `managerdentist`.`user` (`id_user`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
+
+UPDATE `managerdentist`.`historyill` SET `id_user` = '1' WHERE (`id_historyIll` = '1');
+UPDATE `managerdentist`.`historyill` SET `id_user` = '2' WHERE (`id_historyIll` = '2');
+UPDATE `managerdentist`.`historyill` SET `id_user` = '3' WHERE (`id_historyIll` = '3');
+UPDATE `managerdentist`.`historyill` SET `id_user` = '1' WHERE (`id_historyIll` = '4');
+UPDATE `managerdentist`.`historyill` SET `id_user` = '2' WHERE (`id_historyIll` = '5');
+UPDATE `managerdentist`.`historyill` SET `id_user` = '3' WHERE (`id_historyIll` = '6');
+UPDATE `managerdentist`.`historyill` SET `id_user` = '1' WHERE (`id_historyIll` = '7');
+UPDATE `managerdentist`.`historyill` SET `id_user` = '2' WHERE (`id_historyIll` = '8');
+UPDATE `managerdentist`.`historyill` SET `id_user` = '3' WHERE (`id_historyIll` = '9');
+UPDATE `managerdentist`.`historyill` SET `id_user` = '1' WHERE (`id_historyIll` = '10');
+
+
+ALTER TABLE `managerdentist`.`ill` 
+DROP FOREIGN KEY `fk_user_ill`;
+ALTER TABLE `managerdentist`.`ill` 
+ADD COLUMN `id_user_doctor` INT(11) NOT NULL AFTER `id_user_patient`,
+CHANGE COLUMN `id_user` `id_user_patient` INT(11) NOT NULL ,
+ADD INDEX `fk_user_ill_idx` (`id_user_doctor` ASC);
+;
+ALTER TABLE `managerdentist`.`ill` 
+ADD CONSTRAINT `fk_user_ill_patient`
+  FOREIGN KEY (`id_user_patient`)
+  REFERENCES `managerdentist`.`user` (`id_user`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_user_ill_doctor`
+  FOREIGN KEY (`id_user_doctor`)
+  REFERENCES `managerdentist`.`user` (`id_user`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
+
+
+DELETE FROM `managerdentist`.`ill` WHERE (`id_ill` = '4');
+DELETE FROM `managerdentist`.`ill` WHERE (`id_ill` = '5');
+DELETE FROM `managerdentist`.`ill` WHERE (`id_ill` = '6');
+DELETE FROM `managerdentist`.`ill` WHERE (`id_ill` = '7');
+DELETE FROM `managerdentist`.`ill` WHERE (`id_ill` = '8');
+DELETE FROM `managerdentist`.`ill` WHERE (`id_ill` = '9');
+DELETE FROM `managerdentist`.`ill` WHERE (`id_ill` = '10');
+UPDATE `managerdentist`.`ill` SET `id_user_patient` = '7', `id_user_doctor` = '1' WHERE (`id_ill` = '1');
+UPDATE `managerdentist`.`ill` SET `id_user_patient` = '8', `id_user_doctor` = '2' WHERE (`id_ill` = '2');
+UPDATE `managerdentist`.`ill` SET `id_user_patient` = '9', `id_user_doctor` = '3' WHERE (`id_ill` = '3');
+
+
+
+SET FOREIGN_KEY_CHECKS=1;
+-- end edit
         
 DROP PROCEDURE IF EXISTS naiveSearchNameUser;    
 DELIMITER //
@@ -312,6 +366,6 @@ DELIMITER //
    //
 DELIMITER ;
 
-CALL naiveSearchNameUser("name user 10");-- 
+-- CALL naiveSearchNameUser("name user 10");-- 
 
    

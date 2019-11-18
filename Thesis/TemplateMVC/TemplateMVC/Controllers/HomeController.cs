@@ -20,6 +20,9 @@ namespace TemplateMVC.Controllers
         
         public ActionResult managepatient() 
         {
+            user test = new user();
+            ViewBag.totalDoctor = test.queryDoctor();
+            ViewBag.totalPatient = test.queryPatient();
             return View();
         }
 
@@ -352,6 +355,7 @@ namespace TemplateMVC.Controllers
             result = User.findUser(nameInput);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+
 
     }   //end class
 }       //end namespace
