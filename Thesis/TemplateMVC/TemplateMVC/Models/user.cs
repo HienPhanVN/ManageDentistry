@@ -55,11 +55,11 @@ namespace TemplateMVC.Models
             return list;
         }
 
-        public bool Create(string name_user, string phone_user, string address_user, string email_user, int id_tier)
+        public object Create(string name_user, string phone_user, string address_user, string email_user, int id_tier)
         {
             MySqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
-            String sql = "INSERT INTO user(name_user, phone_user, address_user, email_user, id_tier) VALUES(?name_user, ?phone_user, ?address_user, ?email_user, ?id_tier)";
+            String sql = "INSERT INTO user(name_user, phone_user, address_user, email_user, id_tier) VALUES(?name_user, ?phone_user, ?address_user, ?email_user, ?id_tier); SELECT LAST_INSERT_ID();";
             MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
             try
             {
@@ -67,15 +67,16 @@ namespace TemplateMVC.Models
                 cmd.Parameters.Add("?phone_user", MySqlDbType.VarChar).Value = phone_user;
                 cmd.Parameters.Add("?address_user", MySqlDbType.VarChar).Value = address_user;
                 cmd.Parameters.Add("?email_user", MySqlDbType.VarChar).Value = email_user;
-                cmd.Parameters.Add("?id_tier", MySqlDbType.Int32).Value = id_tier;                
-                cmd.ExecuteNonQuery();
+                cmd.Parameters.Add("?id_tier", MySqlDbType.Int32).Value = id_tier;
+                object temp = cmd.ExecuteScalar();
+                return temp;
             }
             catch (Exception e)
             {
                 Debug.WriteLine(e.ToString());
-                return false;
+                return 0;
             }
-            return true;
+            
         }
 
         public bool Delete(int id_user)
@@ -241,6 +242,8 @@ namespace TemplateMVC.Models
             }
             return list;
         }
+
+
 
 
     }

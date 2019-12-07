@@ -42,6 +42,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
+            <input type="hidden" id="id_user_patient_update" value=@ViewBag.id_user_patient />
             <a class="navbar-brand" href="index.html">He Thong Nha Khoa</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -100,7 +101,7 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Add Patient</h4>
+                        <h4 class="modal-title">Add Ill</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -169,30 +170,22 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Edit Patient</h4>
+                    <h4 class="modal-title">Edit Ill</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="input-group mb-3 col-lg-12">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">ID</span>
+                                <span class="input-group-text">Name Ill</span>
                             </div>
-                            <input type="text" id="id_user" class="form-control" readonly>
+                            <input type="text" id="name_ill" class="form-control">
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-group mb-3 col-lg-12">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Name</span>
-                            </div>
-                            <input type="text" id="user_name" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-group mb-3 col-lg-12">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Phone</span>
+                                <span class="input-group-text">Status Ill</span>
                             </div>
                             <input type="text" id="user_phone" class="form-control">
                         </div>
@@ -200,7 +193,7 @@
                     <div class="row">
                         <div class="input-group mb-3 col-lg-12">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Address</span>
+                                <span class="input-group-text">Patient's Name</span>
                             </div>
                             <input type="text" id="user_address" class="form-control">
                         </div>
@@ -209,7 +202,7 @@
                     <div class="row">
                         <div class="input-group mb-3 col-lg-12">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Email</span>
+                                <span class="input-group-text">Doctor's Name</span>
                             </div>
                             <input type="text" id="user_email" class="form-control">
                         </div>
@@ -219,7 +212,6 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Tier</span>
                             </div>
-                            @*<input type="hidden" id="id_tier" class="form-control">*@
                             <select class="custom-select" id="id_tier">
                                 <option selected>Choose...</option>
                                 <option value=1>Doctor</option>
@@ -266,11 +258,10 @@
     <table id="user" class="table table-striped table-bordered" style="width:100%">
         <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <th>Email</th>
-            <th>Tier</th>
+            <th>Name Ill</th>
+            <th>Status</th>
+            <th>Patient</th>
+            <th>Doctor</th>
             <th>Select</th>
         </tr>
 
@@ -280,13 +271,13 @@
                 <td>@Ill.Id_ill</td>
                 <td>@Ill.Name_ill</td>
                 <td>@Ill.Status_ill</td>
-                <td>@Ill.Name_user</td>
+                <td>@Ill.Name_user_patient</td>
+                <td>@Ill.Name_user_doctor</td>
                 <td>
                     <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalEdit">Edit Patient</button>
                     <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalDelete">Delete Patient</button>
                 </td>
             </tr>
-
         }
         <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
         @Html.PagedListPager((IPagedList)ViewBag.OnePageOfIlls, page => Url.Action("pageIll", new { page }))
@@ -362,15 +353,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-
-
-
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <script src="js/all.js"></script>
 
     <script>
@@ -382,26 +365,7 @@
             var user_email = $('#user_email').val($(this).find("td").eq(4).html());
             var id_tier = $('#id_tier').val($(this).find("td").eq(5).html());
         });
-    </script>
 
-    <!--<script>
-        $('#user tr').click(function () {
-            var id_tier = $('#id_tier').val($(this).find("td").eq(5).html());
-            console.log(id_tier);
-            if (id_tier == 1) {
-                id_tier = 'doctor';
-            }
-            else if (id_tier == 2) {
-                id_tier = 'manager';
-            }
-            else if (id_tier == 3) {
-                id_tier = 'patient';
-            }
-            else id_tier = 'else';
-        });
-    </script>-->
-
-    <script>
         function Delete(id_user) {
             $.ajax({
                 url: "http://localhost:63440/Home/deleteUser",
@@ -416,9 +380,7 @@
                 }
             });
         }
-    </script>
-
-    <script>
+  
         function Update(id_user, name_user, phone_user, address_user, email_user, id_tier) {
             $.ajax({
                 url: "http://localhost:63440/Home/updateUser",
@@ -439,9 +401,7 @@
 
             });
         }
-    </script>
 
-    <script>
         function Create(create_name,create_phone,create_address,create_email,create_tier) {
             $.ajax({
                 url: "http://localhost:63440/Home/createUser",
@@ -460,6 +420,9 @@
                 }
             });
         }
+
+        
+
     </script>
 </body>
 </html>

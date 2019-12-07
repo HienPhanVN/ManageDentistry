@@ -111,3 +111,34 @@ C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\Templa
 C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csproj.CopyComplete
 C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.dll
 C:\Users\Hien Phan\Documents\GitKraken\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.pdb
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\TemplateMVC.dll.config
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\TemplateMVC.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\TemplateMVC.pdb
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Newtonsoft.Json.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.Mvc.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Helpers.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Mvc.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Razor.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Razor.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Google.Protobuf.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\BouncyCastle.Crypto.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Renci.SshNet.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\MySql.Data.xml
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\Newtonsoft.Json.xml
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.xml
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\PagedList.Mvc.xml
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Razor.xml
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.xml
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Webpages.Razor.xml
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Helpers.xml
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\System.Web.Mvc.xml
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csprojAssemblyReference.cache
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.csproj.CopyComplete
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.dll
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\obj\Debug\TemplateMVC.pdb
+C:\Users\Laptop\Documents\GitVisual\ManageDentistry\Thesis\TemplateMVC\TemplateMVC\bin\MySql.Data.dll

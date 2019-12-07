@@ -143,7 +143,7 @@
                                     <option selected>Choose...</option>
                                     <option value="1">Doctor</option>
                                     <option value="2">Manager</option>
-                                    <option value="3">Patient</option>
+                                    <option value="4">Patient</option>
                                 </select>
                             </div>
                         </div>
@@ -381,22 +381,53 @@
 
         <script>
             function Create(create_name, create_phone, create_address, create_email, create_tier) {
-                $.ajax({
-                    url: "http://localhost:63440/Home/createUser",
-                    type: 'GET',
-                    data: {
-                        name_user: create_name,
-                        phone_user: create_phone,
-                        address_user: create_address,
-                        email_user: create_email,
-                        id_tier: create_tier
-                    },
-                    success: function (result) {
-                        console.log(result);
-                        alert("Create Successful!");
-                        window.location = "../Home/pageUser"
-                    }
-                });
+                if (create_tier == 4) {
+                    //benh nhan
+                    $.ajax({
+                        url: "http://localhost:63440/Home/createUser",
+                        type: 'GET',
+                        data: {
+                            name_user: create_name,
+                            phone_user: create_phone,
+                            address_user: create_address,
+                            email_user: create_email,
+                            id_tier: create_tier
+                        },
+                        success: function (result) {
+                            console.log(result)
+                            if (result > 0) {
+                                alert("Successful");
+                                location.replace("http://localhost:63440/Home/pageIll?id_user_patient="+result)
+                            } else {
+                                alert("Failed");
+                            }
+                        }
+                    });
+                } else {
+                    //doi tuong con lai
+                    $.ajax({
+                        url: "http://localhost:63440/Home/createUser",
+                        type: 'GET',
+                        data: {
+                            name_user: create_name,
+                            phone_user: create_phone,
+                            address_user: create_address,
+                            email_user: create_email,
+                            id_tier: create_tier
+                        },
+                        success: function (result) {
+                            console.log(result);
+                            if (result > 0) {
+                                alert("Successful");
+                                window.location = "../Home/pageUser"
+                            } else {
+                                alert("Failed");
+                            }
+                        }
+                    });
+                }
+
+
             }
         </script>
 </body>

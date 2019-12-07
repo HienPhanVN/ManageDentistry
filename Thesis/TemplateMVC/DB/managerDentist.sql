@@ -36,6 +36,7 @@ ADD CONSTRAINT `fk_tier_user`
 
 SET FOREIGN_KEY_CHECKS=0;
 TRUNCATE TABLE `managerdentist`.`user`;
+
 INSERT INTO `managerdentist`.`user`(name_user, phone_user, address_user, email_user, id_tier)
 VALUES
 	('Doctor 1', '0001', 'address doctor 1', 'doctor0001@mail.com.vn', 2),
@@ -47,7 +48,10 @@ VALUES
 	('Patient 1', '0001', 'address patient 1', 'patient0001@mail.com.vn', 4),
 	('Patient 2', '0002', 'address patient 2', 'patient0002@mail.com.vn', 4),
 	('Patient 3', '0003', 'address patient 3', 'patient0003@mail.com.vn', 4),
-	('Admin', '0005', 'address admin 5', 'admin0005@mail.com.vn', 1);
+	('Admin', '0005', 'address admin 5', 'admin0005@mail.com.vn', 1),
+    ('Unknow', '0006', 'address Unknow 6', 'Unknow06@mail.com.vn', 2);
+    
+
 SET FOREIGN_KEY_CHECKS=1;    
     
 CREATE TABLE IF NOT EXISTS `managerdentist`.`account` (

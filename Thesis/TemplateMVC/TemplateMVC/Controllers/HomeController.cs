@@ -52,11 +52,24 @@ namespace TemplateMVC.Controllers
         }
 
         //create
-        public bool createUser(string name_user, string phone_user, string address_user, string email_user, int id_tier)
+        public int createUser(string name_user, string phone_user, string address_user, string email_user, int id_tier)
         {
             user patient = new user();
-            bool result = patient.Create(name_user, phone_user, address_user, email_user, id_tier);
-            return result;
+            object result = patient.Create(name_user, phone_user, address_user, email_user, id_tier);
+            int result2 = Convert.ToInt32(result);
+            if (result2 > 0)
+            {
+                ill ill = new ill();
+                bool resultOfIll = ill.Create("Unknow", "Unknow", result2, 6);
+            }
+            return result2;
+        }
+
+        public ActionResult getUserById(int id_user_patient)
+        {
+            ill tempIll = new ill();
+            ill result = tempIll.getIllOfUserById(id_user_patient);
+            return Json(result);
         }
 
         public bool createAccount(string username_account, string password_account, int id_user)
@@ -66,10 +79,10 @@ namespace TemplateMVC.Controllers
             return result;
         }
 
-        public bool createIll(string name_ill, string status_ill, int id_user)
+        public bool createIll(string name_ill, string status_ill, int id_user_patient, int id_user_doctor)
         {
             ill Ill = new ill();
-            bool result = Ill.Create(name_ill, status_ill, id_user);
+            bool result = Ill.Create(name_ill, status_ill, id_user_patient, id_user_doctor);
             return result;
         }
 
@@ -138,6 +151,9 @@ namespace TemplateMVC.Controllers
 
         public ActionResult pageIll(int? page)
         {
+            string id_user = Request["id_user_patient"];
+
+            Debug.WriteLine(id_user);
 
             ill tempIll = new ill();
 
@@ -149,6 +165,8 @@ namespace TemplateMVC.Controllers
 
             ViewBag.onePageOfIlls = onePageOfIlls;
 
+            ViewBag.id_user_patient = id_user;
+            
             return View();
         }
 
