@@ -169,6 +169,7 @@
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
+                <input type="hidden" id="idIll" value=""/>
                 <div class="modal-header">
                     <h4 class="modal-title">Edit Ill</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -187,7 +188,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Status Ill</span>
                             </div>
-                            <input type="text" id="user_phone" class="form-control">
+                            <input type="text" id="status_ill" class="form-control">
                         </div>
                     </div>
                     <div class="row">
@@ -195,7 +196,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Patient's Name</span>
                             </div>
-                            <input type="text" id="user_address" class="form-control">
+                            <input type="text" id="name_patient" class="form-control">
                         </div>
                     </div>
 
@@ -204,25 +205,18 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Doctor's Name</span>
                             </div>
-                            <input type="text" id="user_email" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-group mb-3 col-lg-12">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Tier</span>
-                            </div>
-                            <select class="custom-select" id="id_tier">
-                                <option selected>Choose...</option>
-                                <option value=1>Doctor</option>
-                                <option value=2>Manager</option>
-                                <option value=3>Patient</option>
+                            <select class="custom-select" id="name_doctor">
+                                @foreach (var doctor in ViewBag.totalDoctor)
+                                {
+                                    <option value=@doctor.id_user>@doctor.name_user</option>
+                                }
                             </select>
                         </div>
                     </div>
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" onclick="Update($('#id_user').val(),$('#user_name').val(),$('#user_phone').val(),$('#user_address').val(),$('#user_email').val(),$('#id_tier').val())">Save</button>
+                    <button type="button" class="btn btn-success" onclick="Update($('#idIll').val(), $('#name_ill').val(),$('#status_ill').val(),$('#name_patient').val(),$('#name_doctor').val())">Save</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -274,7 +268,7 @@
                 <td>@Ill.Name_user_patient</td>
                 <td>@Ill.Name_user_doctor</td>
                 <td>
-                    <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalEdit">Edit Patient</button>
+                    <button type="button" class="btn btn-primary px-4 py-3 mt-3 editPatient" data-toggle="modal" data-target="#modalEdit" >Edit Patient</button>
                     <button type="button" class="btn btn-primary px-4 py-3 mt-3" data-toggle="modal" data-target="#modalDelete">Delete Patient</button>
                 </td>
             </tr>
@@ -358,12 +352,14 @@
 
     <script>
         $('#user tr').click(function () {
-            var id_user = $('#id_user').val($(this).find("td").eq(0).html());
-            var user_name = $('#user_name').val($(this).find("td").eq(1).html());
-            var user_phone = $('#user_phone').val($(this).find("td").eq(2).html());
-            var user_address = $('#user_address').val($(this).find("td").eq(3).html());
-            var user_email = $('#user_email').val($(this).find("td").eq(4).html());
-            var id_tier = $('#id_tier').val($(this).find("td").eq(5).html());
+            var idIll = $('#idIll').val($(this).find("td").eq(0).html());
+            var name_ill = $('#name_ill').val($(this).find("td").eq(1).html());
+            var status_ill = $('#status_ill').val($(this).find("td").eq(2).html());
+            var name_patient = $('#name_patient').val($(this).find("td").eq(3).html());
+            var doctor_name = $(this).find("td").eq(4).html()
+            $('#name_doctor option').filter(function () {
+                 return $(this).text() === doctor_name;
+            }).prop('selected', true);
         });
 
         function Delete(id_user) {
@@ -381,17 +377,16 @@
             });
         }
   
-        function Update(id_user, name_user, phone_user, address_user, email_user, id_tier) {
+        function Update(Id_ill, name_ill, status_ill, name_doctor) {
+            //neu muon thay doi benh nhan thi xoa ln benh nhan do va tao benh nhan moi 
             $.ajax({
-                url: "http://localhost:63440/Home/updateUser",
+                url: "http://localhost:63440/Home/updateIll",
                 type: 'GET',
                 data: {
-                    id_user: id_user,
-                    name_user: name_user,
-                    phone_user: phone_user,
-                    address_user: address_user,
-                    email_user: email_user,
-                    id_tier: id_tier
+                    id_ill:Id_ill, 
+                    name_ill: name_ill,
+                    status_ill: status_ill,
+                    name_doctor: name_doctor,
                 },
                 success: function (result) {
                     console.log(result);

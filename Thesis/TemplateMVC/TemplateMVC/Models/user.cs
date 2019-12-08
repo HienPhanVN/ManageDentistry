@@ -243,8 +243,5 @@ namespace TemplateMVC.Models
             return list;
         }
 
-
-
-
     }
 }

@@ -60,22 +60,12 @@
 
     $(document).ready(function () {
         //pageIll
-        var id_user_patient_update = $('#id_user_patient_update').val();
-        
-        if (id_user_patient_update) {
-            $.ajax({
-                url: "http://localhost:63440/Home/getUserById",
-                type: 'GET',
-                data: {
-                    id_user_patient: id_user_patient_update
-                },
-                success: function (result) {
-                    console.log(result)
-                    alert(id_user_patient_update)
-                    $('#modalEdit').modal('toggle');
-                }, error: function (request, status, error) {
-                    console.log(error)
+        if ($('#id_user_patient_update').val()) {
+            $('#user tr').each(function (i, obj) {
+                //console.log($(obj).find("button").first().text())
+                if ($('#id_user_patient_update').val() == $(obj).find("td").eq(0).html()) {
+                    $(obj).find("button").first().trigger('click');
                 }
             });
         }
-    } );
+    });

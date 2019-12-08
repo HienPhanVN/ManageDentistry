@@ -69,7 +69,7 @@ namespace TemplateMVC.Controllers
         {
             ill tempIll = new ill();
             ill result = tempIll.getIllOfUserById(id_user_patient);
-            return Json(result);
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         public bool createAccount(string username_account, string password_account, int id_user)
@@ -151,6 +151,8 @@ namespace TemplateMVC.Controllers
 
         public ActionResult pageIll(int? page)
         {
+            user test = new user();
+
             string id_user = Request["id_user_patient"];
 
             Debug.WriteLine(id_user);
@@ -166,7 +168,9 @@ namespace TemplateMVC.Controllers
             ViewBag.onePageOfIlls = onePageOfIlls;
 
             ViewBag.id_user_patient = id_user;
-            
+
+            ViewBag.totalDoctor = test.queryDoctor();
+
             return View();
         }
 
