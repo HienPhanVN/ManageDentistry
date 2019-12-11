@@ -138,6 +138,46 @@ namespace TemplateMVC.Models
             return list;
         }
 
+        public List<user> Read(int typeUser)
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            List<user> list = new List<user>();
+            try
+            {
+                conn.Open();
+                String sql = "SELECT id_user, name_user, phone_user, address_user, email_user, id_tier FROM managerdentist.user WHERE id_tier = @id_tier;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.Add("?id_tier", MySqlDbType.Int32).Value = typeUser;
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            user user_temp = new user();
+                            user_temp.id_user = reader.GetInt32(0);
+                            user_temp.name_user = reader.GetString(1);
+                            user_temp.phone_user = reader.GetString(2);
+                            user_temp.address_user = reader.GetString(3);
+                            user_temp.email_user = reader.GetString(4);
+                            user_temp.id_tier = reader.GetInt32(5);
+                            list.Add(user_temp);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.ToString());
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+            return list;
+        }
 
         public bool Update(int id_user, string name_user, string phone_user, string address_user, string email_user, int id_tier)
         {
@@ -201,6 +241,48 @@ namespace TemplateMVC.Models
             }
             return list;
         }
+
+
+        public List<user> querySecretary()
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            List<user> list = new List<user>();
+            try
+            {
+                conn.Open();
+                String sql = "SELECT id_user, name_user, phone_user, address_user, email_user, id_tier FROM managerdentist.user WHERE id_tier = 3;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            user user_temp = new user();
+                            user_temp.id_user = reader.GetInt32(0);
+                            user_temp.name_user = reader.GetString(1);
+                            user_temp.phone_user = reader.GetString(2);
+                            user_temp.address_user = reader.GetString(3);
+                            user_temp.email_user = reader.GetString(4);
+                            user_temp.id_tier = reader.GetInt32(5);
+                            list.Add(user_temp);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.ToString());
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+            return list;
+        }
+
 
 
         public List<user> queryPatient()

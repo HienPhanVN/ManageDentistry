@@ -115,16 +115,58 @@ namespace TemplateMVC.Controllers
         }
 
         //read
-        public ActionResult pageUser(int? page)
+        public ActionResult pageUser(int? page, int? typeUserInput)
         {
+            int typeUser;
 
+            if (string.IsNullOrEmpty(Request["typeUser"])){
+                typeUser = 0;
+            }else {
+                typeUser = Int32.Parse(Request["typeUser"]);
+            }
             user tempUser = new user();
+            List<user> allUser;
+            string typeNameUser;
+            if(typeUser == 2)
+            {
 
-            var allUser = tempUser.Read();
+                allUser = tempUser.queryDoctor();
+
+                typeNameUser = "Doctor";
+
+            }else if (typeUser == 4) {
+
+                allUser = tempUser.queryPatient();
+
+                typeNameUser = "Patient";
+
+            }
+            else if (typeUser == 3) {
+
+                allUser = tempUser.querySecretary();
+
+                typeNameUser = "Secretary";
+
+            }
+            else {
+
+                allUser = tempUser.Read();
+
+                typeNameUser = "All";
+
+            }
+
 
             var pageNumber = page ?? 1;
 
+
             var onePageOfUsers = allUser.ToPagedList(pageNumber, 5);
+
+            ViewBag.typeNameUser = typeNameUser;
+
+            ViewBag.typeUser = typeUser;
+
+            ViewBag.currnetPage = pageNumber;
 
             ViewBag.OnePageOfUsers = onePageOfUsers;
 
@@ -149,13 +191,24 @@ namespace TemplateMVC.Controllers
 
         }
 
+        public ActionResult pagePatient(int? page) {
+            user tempPatient = new user();
+
+            var pageNumber = page ?? 1;
+
+            var allPatient = tempPatient.queryPatient();
+
+            var onePageOfPatients = allPatient.ToPagedList(pageNumber, 5);
+
+            ViewBag.onePageOfPatients = onePageOfPatients;
+
+            return View();
+        }
         public ActionResult pageIll(int? page)
         {
             user test = new user();
 
             string id_user = Request["id_user_patient"];
-
-            Debug.WriteLine(id_user);
 
             ill tempIll = new ill();
 
@@ -170,6 +223,16 @@ namespace TemplateMVC.Controllers
             ViewBag.id_user_patient = id_user;
 
             ViewBag.totalDoctor = test.queryDoctor();
+
+            List<string> allTooth = new List<string>();
+            for (int n = 1; n <= 4; n++) {
+                for (int i = 1; i <= 8; i++)
+                {
+                    allTooth.Add("R"+n+i);
+                }
+            }
+
+            ViewBag.totalTooth = allTooth;
 
             return View();
         }

@@ -196,7 +196,7 @@
     <Compile Include="Models\historyIll.cs" />
     <Compile Include="Models\historyproduct.cs" />
     <Compile Include="Models\ill.cs" />
-    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\patient.cs" />
     <Compile Include="Models\product.cs" />
     <Compile Include="Models\tier.cs" />
     <Compile Include="Models\user.cs" />
@@ -339,6 +339,7 @@
     <Content Include="Views\Home\pageProduct.cshtml" />
     <Content Include="Views\Home\pageHistoryproduct.cshtml" />
     <Content Include="Views\Home\pageBill.cshtml" />
+    <Content Include="Views\Home\pagePatient.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
